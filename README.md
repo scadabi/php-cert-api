@@ -41,7 +41,8 @@ In order to create certificates throgh this api, you need to send information in
     "commonName":"NAME OR ALIAS",
     "emailAddress":"MAIL",
     "userID":"USER ID FOR OTHER APLICATIONS OR SYSTEMS",
-    "PassPhrase":"PASSWORD FOR PRIVATE KEY"
+    "PassPhrase":"PASSWORD FOR PRIVATE KEY",
+    "daysToExpire":"Number of days that you want to be available"
  }
 ```
 The action that will permit you create certificates has the name "create-certificate". It has some parameters that it needs to create the files that contains certificate, private and public keys.
@@ -59,6 +60,7 @@ The parameters that you need to send are the next:
 | emailAddress  | Yes  | This parameter is to describe the mail that the final user will be identify by certificate  |
 | userID  | Yes  | This parameter is to create the certificate, public key and private key in files with the name of user id of other systems in order to create a link between them  |
 | PassPhrase  | Yes  | This parameter is to assign a password for private key that will be created  |
+| daysToExpire  | No  | This parameter is optional, it needs to be an integer value, that value represents the number of days that you want to be active, after that time the certificate will be expired. If you put a bad value (not integer) or you do not send it, it will be 360 days by default  |
 
 Once the information was sended to the api, it will send you the next structure.
 
